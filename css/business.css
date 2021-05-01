@@ -1,0 +1,148 @@
+:root{
+    --light-color:#FFF7EE;
+    --hd-color: #FE9200;
+}
+body{
+    background-color: var(--light-color);
+}
+html{
+    scroll-behavior: smooth;
+}
+.ftSociall{
+    margin-top: -3%;
+    padding-bottom: 1%;
+    width: 26%;
+    margin-left: 37%;
+    margin-right: 37%;
+}
+.ftSociall ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.ftSociall li{
+    list-style: none;
+    padding: 5px 20px;
+}
+.ftSociall i{
+    color: var(--hd-color);
+    font-size: 25px;
+}
+.ftSociall i:hover{
+    color: white;
+}
+.ftLogo{
+    width: 10% !important;
+    margin-left: 50px;
+}
+.copyright{
+font-size: 10px;
+color: rgba(255, 255, 255, 0.445);
+margin-top: 0px;
+margin-left: 50px;
+padding-top: 15px;
+padding-bottom: 20px;
+}
+.ds{
+margin-top: -90px;
+width: 2.5%;
+float: right;
+margin-right: 20px;
+}
+/* ----------------------Page */
+.left{
+    margin-top: -10px;
+    z-index: 0;
+    height: 60vh;
+    position: fixed;
+    width: 15%;
+}
+
+.left ul{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.left li{
+    padding: 12px 0px;
+    list-style: none;
+}
+.left a{
+    color: var(--hd-color);
+    font-weight: 500;
+    padding-bottom: 5px !important;
+    text-decoration: none;
+    font-size: 20px;
+}
+.cl {
+    text-decoration: none;
+  }
+  
+  .cl::after {
+      margin-top: 3px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background:var(--hd-color);
+    transition: width 0.5s;
+  }
+  
+  .cl:hover::after {
+    width: 55%;
+  }
+.right{
+    padding-top: 7vh;
+    margin: 0% 20% 0% 20% ;
+}
+.right h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: var(--hd-color);
+    text-shadow: 0 1px 2px black;
+}
+.right p{
+    font-size: 20px;
+}
+.box{
+    background: rgba(255, 255, 255, 0.012);
+    box-shadow:  0 3px 20px rgba(0, 0, 0, 0.116);
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+@media only screen and (max-width:700px) {
+    .left{
+        display: none;
+    }
+    .right{
+        padding-top: 7vh;
+        margin: 0% 3% 0% 3% ;
+    }
+    .right h1{
+        font-size: 30px;
+        padding-bottom: 20px;
+        color: var(--hd-color);
+        text-shadow: 0 1px 2px black;
+    }
+    .right p{
+        font-size: 16px;
+    }
+.ftLogo{
+    width: 30% !important;
+    margin-left: 35% !important;
+    margin-right: 35% !important;
+}
+.ftSociall ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.copyright{
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.445);
+    margin-top: -10px !important;
+    margin-left: 50px;
+    padding-top: 0px !important;
+    padding-bottom: 20px;
+    }
+}

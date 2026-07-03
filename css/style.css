@@ -384,7 +384,7 @@ footer {
 }
 .footer-social a:hover { color:var(--orange); }
 .footer-social svg, .footer-social i { width:19px; height:19px; display:flex; }
-.footer-email-link { font-size:0.85rem; font-weight:500; color:inherit; text-decoration:none; letter-spacing:0.01em; }
+.footer-email-link { font-size:0.85rem; font-weight:500; color:#ffffff; text-decoration:none; letter-spacing:0.01em; }
 
 .footer-nav { min-width:0; }
 .footer-nav ul { display:flex; flex-direction:column; gap:10px; }

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sizzde Lojistik hakkında: misyonumuz, vizyonumuz ve aynı gün teslimat teknolojimizi keşfedin.">
+  <meta name="theme-color" content="#FE9200">
+  <meta property="og:title" content="Hakkımızda | Sizzde Lojistik">
+  <meta property="og:description" content="Sizzde, teknoloji odaklı aynı gün teslimat platformudur.">
+  <meta property="og:type" content="website">
+  <title>Hakkımızda | Sizzde Lojistik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Shared styles first, then page-specific overrides -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <!-- ── Hamburger (identical to index.html) ─────────── -->
+  <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- ── Nav overlay (identical to index.html) ──────── -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Ana menü">
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="about.html" aria-current="page">Hakkımızda</a></li>
+      <li><a href="index.html#hizmetler">Hizmetler</a></li>
+      <li><a href="#footer">İletişim</a></li>
+    </ul>
+    <div class="socialBar">
+      <ul>
+        <li><a href="https://www.instagram.com/sizzdecom/" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/sizzde" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="https://twitter.com/sizzdecom" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Header (identical to index.html) ───────────── -->
+  <header class="navbar" role="banner">
+    <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
+      <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105">
+    </a>
+  </header>
+  <div class="header-spacer" aria-hidden="true"></div>
+
+  <!-- ── About Page Layout ──────────────────────────── -->
+  <div class="about-wrapper">
+
+    <!-- Sticky sidebar -->
+    <aside class="about-sidebar" aria-label="Sayfa içi gezinti">
+      <nav>
+        <ul>
+          <li><a class="sidebar-link" href="#hakkimizda">Hakkımızda</a></li>
+          <li><a class="sidebar-link" href="#misyon">Misyon</a></li>
+          <li><a class="sidebar-link" href="#vizyon">Vizyon</a></li>
+          <li><a class="sidebar-link" href="#ozellikler">Özellikler</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="about-content" id="main-content">
+
+      <section id="hakkimizda" class="about-section">
+        <h1>Hakkımızda</h1>
+        <p>Sizzde, sektör deneyimli yönetim kadrosu, müşteri odaklı yaklaşımı ve teknolojiye yaptığı yatırımlarla sektörde fark yaratma hedefiyle yola çıkmıştır.</p>
+        <p>"Hemen sizde" sloganıyla tüm hizmet modellerini aynı gün teslim üzerine kurgulamış ve tüm teslimatlarını aynı gün içerisinde gerçekleştirmektedir.</p>
+        <p>Paket servisi hizmeti verdiği müşterilerinin kargolarını dakikalar içinde teslim ederken, e-ticaret yapan müşterilerinin kargolarını da aynı gün içerisinde randevulu teslim ederek sektörde bir ilki gerçekleştirmektedir.</p>
+      </section>
+
+      <section id="misyon" class="about-section">
+        <h2>Misyon</h2>
+        <p>Topluma ve çevreye fayda sağlayan, toplumsal değerlere saygılı, kanunlara uyan; müşteri memnuniyetinin ancak mutlu çalışanlarla mümkün olacağı bilinciyle hareket ederek kaliteli hizmet sunmak.</p>
+      </section>
+
+      <section id="vizyon" class="about-section">
+        <h2>Vizyon</h2>
+        <p>Teknolojiyi tecrübe ve uzmanlıkla harmanlayarak her geçen gün değişen müşteri beklentilerine uygun çözümler üreten, sektörde fark yaratan firma olmak.</p>
+      </section>
+
+      <section id="ozellikler" class="about-section" aria-label="Öne çıkan özellikler">
+        <h2>Neden Sizzde?</h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon"><i data-lucide="clock-4"></i></div>
+            <h3>7/24 Kesintisiz Hizmet</h3>
+            <p>Hizmet almak istediğiniz saat aralığını belirleyin, biz gerçekleştirelim.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i data-lucide="smartphone"></i></div>
+            <h3>Teknoloji Odakli</h3>
+            <p>Mobil uygulama ile tüm iş süreçleri avucunuzun içinde takip edilir.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i data-lucide="thermometer-snowflake"></i></div>
+            <h3>Frigolu Araçlar</h3>
+            <p>Soğutuculu araçlarımızla market siparişleriniz hızlı ve taptaze ulaşır.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+            <h3>Güvenli Teslimat</h3>
+            <p>Temassız ve sigortalı teslimat seçenekleriyle müşteri güvenliğini önceliklendiririz.</p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Footer (identical to index.html) ───────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Sizzde Ana Sayfa">
+          <img src="img/logo.png" alt="Sizzde Lojistik" class="ft-logo" width="96" loading="lazy">
+        </a>
+        <p class="footer-tagline">Aynı gün teslimat.<br>Hızlı, güvenilir, teknolojik.</p>
+        <nav class="footer-social" aria-label="Sosyal medya">
+          <a href="https://www.instagram.com/sizzdecom/" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sizzde" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:info@sizzde.com" aria-label="E-posta"><i data-lucide="mail"></i></a>
+          <a href="https://twitter.com/sizzdecom" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a>
+        </nav>
+      </div>
+
+      <nav class="footer-nav" aria-label="Site haritası">
+        <p class="footer-nav-heading">Sirket</p>
+        <ul>
+          <li><a href="about.html#hakkimizda">Hakkımızda</a></li>
+          <li><a href="https://form.jotform.com/211254728900048" target="_blank" rel="noopener">Kariyer</a></li>
+          <li><a href="#">Sartlar ve Kosullar</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Sürdürülebilirlik</a></li>
+          <li><a href="tel:08500000000">Bize Ulasin</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-map-col">
+        <p class="footer-nav-heading">Konum</p>
+        <iframe
+          class="footer-map-frame"
+          title="Sizzde konum haritası"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406.0376536172211!2d29.143925891320443!3d41.00028642826869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzAwLjkiTiAyOcKwMDgnMzkuMSJF!5e0!3m2!1str!2str!4v1620552945743!5m2!1str!2str"
+          width="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <address class="footer-copy">2026 &copy; Sizzde Lojistik Ltd. Tüm hakları saklıdır.</address>
+      <a href="https://fistkolektif.com/" target="_blank" rel="noopener" class="footer-dev" aria-label="Fist Kolektif">
+        <svg width="15" viewBox="0 0 29 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="26" height="48" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M28.3824 0H0V50H28.3824V0ZM18.7118 32.4507V42.5632C18.7118 43.5494 19.2392 44.0425 20.2941 44.0425C21.332 44.0425 21.8509 43.5494 21.8509 42.5632V29.492C21.8509 28.4469 20.728 27.2252 18.4821 25.8268C16.2192 24.4431 15.0877 22.7503 15.0877 20.7484V7.47852C15.0877 4.44624 16.8147 2.9301 20.2686 2.9301C23.7395 2.9301 25.475 4.44624 25.475 7.47852V17.6352H21.8509V7.47852C21.8509 6.50701 21.332 6.02126 20.2941 6.02126H20.2686C19.2307 6.02126 18.7118 6.50701 18.7118 7.47852V20.6822C18.7118 21.6537 19.8347 22.8386 22.0806 24.237C24.3435 25.6207 25.475 27.284 25.475 29.2271V42.5632C25.475 45.6102 23.748 47.1337 20.2941 47.1337C16.8232 47.119 15.0877 45.5955 15.0877 42.5632V32.4507H18.7118ZM3.12927 3.26661H8.7228C11.9558 3.26661 13.5722 4.79088 13.5722 7.83942V42.2465C13.5722 45.2803 11.8788 46.8045 8.49188 46.8193H3.12927V3.26661ZM6.77276 6.35215V43.7116H8.36359C9.40703 43.7116 9.92875 43.2232 9.92875 42.2465V7.83942C9.92875 6.84791 9.40703 6.35215 8.36359 6.35215H6.77276Z" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    /* Menu toggle — identical logic to index.html */
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav    = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('active');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* Sidebar: highlight active section on scroll */
+    const sections = document.querySelectorAll('.about-section[id]');
+    const links    = document.querySelectorAll('.sidebar-link');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.sidebar-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

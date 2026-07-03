@@ -1,371 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-    <link rel="data" href="https://sizzde-form-default-rtdb.europe-west1.firebasedatabase.app/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sizzde Lojistik ile aynı gün teslimat, saatli kurye ve şehirlerarası kargo hizmetleri. Hızlı, güvenilir, teknolojik.">
+  <meta name="theme-color" content="#FE9200">
+  <meta property="og:title" content="Sizzde | Aynı Gün Teslimat">
+  <meta property="og:description" content="Kargolar depo ve mağazalardan alındığı aynı gün içinde alıcılarına randevulu teslim edilir.">
+  <meta property="og:type" content="website">
+  <title>Sizzde | Aynı Gün Teslimat</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
-    <title>Sizzde | Aynı Gün Sizzde</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
 </head>
-<div id="loading" class="loading"><img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="sizzdeLogo animate-flicker" src="img/load.png"></div>
-<body>    
-    <div class="menuToggle" onclick="toggleMenu();"></div> 
-    <div class="nav" onclick="toggleMenu();">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="business.html">Blog</a></li>
-            <li><a href="jobs.html">İşler</a></li>
-            <li><a href="business.html">Hakkında</a></li> 
-            <li><a href="#footer">İletişim</a></li>
-        </ul>
-        <div class="socialBar">
-            <ul>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/sizzde"><i class="fa fa-linkedin"></i></a> </li>
-                <li><a href="#"><i class="fa fa-telegram"></i></a></li>
-                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="navbar">
-        <a href="index.html" class="logoa"><img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" id="logo" class="logo" src="img/logo.png" alt=""></a>
-        <label id="dark-change"></label>
-    </div>
-    <div class="tNav">
+<body>
+
+  <!-- Hamburger -->
+  <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Nav Dropdown -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Ana menü">
     <ul>
-      <li><a href="https://www.instagram.com/sizzdecom/"><i class="fa fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="https://twitter.com/sizzdecom"><i class="fa fa-twitter"></i></a></li>
-  </ul>
-</div>
-     <!-- ------------>
-<br><br><br><br>
-<div class="slider">
-  <div class="slide_viewer">
-    <div class="slide_group">
-      <div class="slide">
-        <h1 style="color: black;">Aynı Gün Teslimat Hizmetimizle <br> Siz de Fark Yaratın!</h1>
-        <p>Kargolar depo ve mağazalardan alındığı aynı gün içerisnde alıcılarına randevulu teslim edilir.</p>
-        <img class="car" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" src="img/car.png" alt="">
+      <li><a href="index.html" aria-current="page">Ana Sayfa</a></li>
+      <li><a href="about.html">Hakkımızda</a></li>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#footer">İletişim</a></li>
+    </ul>
+    <div class="socialBar">
+      <ul>
+        <li><a href="https://www.instagram.com/sizzdecom/" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/sizzde" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="https://twitter.com/sizzdecom" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="navbar" role="banner">
+    <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
+      <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105" height="auto">
+    </a>
+  </header>
+
+  <!-- ── Hero Slider ─────────────────────────────── -->
+  <div style="height:64px" aria-hidden="true"></div>
+  <div class="slider" role="region" aria-label="Ana slayt gösterisi">
+    <div class="slide_viewer">
+      <div class="slide_group">
+        <div class="slide" role="group" aria-label="Slayt 1">
+          <h1 style="color:#1A1A1A">Aynı Gün Teslimat ile Fark Yaratın</h1>
+          <p>Kargolar depo ve mağazalardan alındığı aynı gün içinde alıcılarına randevulu teslim edilir.</p>
+          <img class="car" src="img/car.png" alt="Teslimat aracı" loading="lazy">
+        </div>
+        <div class="slide" role="group" aria-label="Slayt 2">
+          <h1>Dağıtım, araç ve ikame sorunlarıyla uğraşmayın</h1>
+          <p>Siz uzmanı olduğunuz işinize odaklanın. İşletmenizin paketlerini dakikalar içinde teslim edelim.</p>
+          <img class="moto" src="img/moto.png" alt="Motokurye teslimat" loading="lazy">
+        </div>
       </div>
-      <div class="slide">
-        <h1>Dağıtım personeli, araçlar, ikame <br> araç ihtiyacı sorunlarıyla uğraşmayın!</h1>
-        <p>Siz uzmanı olduğunuz işinize odaklanın işletmenizin paketlerini dakikalar içinde teslim edelim. </p>
-        <img class="moto" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" src="img/moto.png" alt="">
+    </div>
+  </div>
+  <div class="slide_buttons" role="tablist" aria-label="Slayt gezintisi"></div>
+  <div class="directional_nav" aria-label="Slayt yön kontrolleri">
+    <button class="previous_btn" aria-label="Önceki slayt">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66" aria-hidden="true">
+        <g><g>
+          <path fill="#474544" d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118 c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z"/>
+          <path fill="#474544" d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0 c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564 c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z"/>
+        </g></g>
+      </svg>
+    </button>
+    <button class="next_btn" aria-label="Sonraki slayt">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66" aria-hidden="true">
+        <g><g>
+          <path fill="#474544" d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5 c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288 c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z"/>
+          <path fill="#474544" d="M18.022,33.569c-0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 L17.241,11.615c-0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z"/>
+        </g></g>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ── CTA ─────────────────────────────────────── -->
+  <div class="tklf">
+    <a class="altbtn" href="https://form.jotform.com/211254728900048" target="_blank" rel="noopener">Teklif Alın</a>
+  </div>
+
+
+
+  <section class="firstCards" id="hizmetler" aria-label="Hizmetlerimiz">
+    <h2 class="section-heading">Hizmetlerimiz</h2>
+    <div class="row">
+
+      <article class="card">
+        <div class="card-icon"><i data-lucide="package"></i></div>
+        <h3>Paket Servis Hizmeti</h3>
+        <p>Market ve restoran siparişleri dedike araç veya paket basi ücret seçenekleriyle dakikalar içinde teslim edilir.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon"><i data-lucide="timer"></i></div>
+        <h3>Saatli Teslimat</h3>
+        <p>Hizmet talebinden itibaren gönderiler azami 30 ila 180 dakika aralığında adresden alınarak teslim edilir.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── How It Works ───────────────────────────── -->
+  <section class="how-it-works" aria-labelledby="hiw-heading">
+    <h2 class="section-heading" id="hiw-heading">Nasıl Çalışır?</h2>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">01</div>
+        <div class="hiw-icon"><i data-lucide="file-text"></i></div>
+        <h3>Teklif Alın</h3>
+        <p>Hizmet ihtiyacınızı belirtin, size özel bir teklif hazırlayalım.</p>
+      </div>
+      <div class="hiw-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+      <div class="hiw-step">
+        <div class="hiw-num">02</div>
+        <div class="hiw-icon"><i data-lucide="smartphone"></i></div>
+        <h3>Siparis Olusturun</h3>
+        <p>Mobil uygulamamız üzerinden anında gönderi talebi oluşturun.</p>
+      </div>
+      <div class="hiw-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <div class="hiw-icon"><i data-lucide="truck"></i></div>
+        <h3>Teslim Edilsin</h3>
+        <p>Kurye en kısa sürede alıp alıcınıza aynı gün teslim eder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Sizzde ─────────────────────────────── -->
+  <section class="secondCards" aria-label="Neden Sizzde">
+    <h2 class="section-heading light">Neden Sizzde?</h2>
+    <div class="row">
+      <article class="card">
+        <div class="column">
+          <div class="scicon"><i data-lucide="clock-4"></i></div>
+          <h3>7/24 Kesintisiz Hizmet</h3>
+          <p>Hizmet almak istediğiniz saat aralığını belirleyin, biz gerçekleştirelim.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="column">
+          <div class="scicon"><i data-lucide="smartphone"></i></div>
+          <h3>Teknoloji Odakli</h3>
+          <p>Mobil uygulama ile tüm iş süreçleri anlık olarak takip edilir.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="column">
+          <div class="scicon"><i data-lucide="thermometer-snowflake"></i></div>
+          <h3>Frigolu Araçlar</h3>
+          <p>Soğutuculu araçlarımızla market siparişleriniz hızlı ve taptaze ulaşır.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="column">
+          <div class="scicon"><i data-lucide="shield-check"></i></div>
+          <h3>Güvenli Teslimat</h3>
+          <p>Temassız ve sigortalı teslimat seçenekleriyle müşteri güvenliğini öncelik tutarız.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── Tracking ────────────────────────────────── -->
+  <section class="que" aria-labelledby="query-heading">
+    <div class="row">
+      <h2 id="query-heading">Gönderi Sorgula</h2>
+      <form action="" onsubmit="return false;" role="search">
+        <label for="gonderino" class="sr-only">Gönderi numarası</label>
+        <input type="text" name="tracking" id="gonderino" placeholder="Gönderi No" autocomplete="off">
+        <button type="submit">Sorgula</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ─────────────────────────────── -->
+  <section class="cta-banner" aria-label="Hizmete başlayın">
+    <div class="cta-inner">
+      <h2>Aynı gün teslimatı bugün başlatın</h2>
+      <p>İşletmeniz için özel fiyat teklifini dakikalar içinde alın.</p>
+      <a href="https://form.jotform.com/211254728900048" target="_blank" rel="noopener" class="cta-btn">Ücretsiz Teklif Al</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Sizzde Ana Sayfa">
+          <img src="img/logo.png" alt="Sizzde Lojistik" class="ft-logo" width="110" loading="lazy">
+        </a>
+        <p class="footer-tagline">Aynı gün teslimat.<br>Hızlı, güvenilir, teknolojik.</p>
+        <nav class="footer-social" aria-label="Sosyal medya">
+          <a href="https://www.instagram.com/sizzdecom/" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sizzde" aria-label="LinkedIn" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:info@sizzde.com" class="footer-email-link">info@sizzde.com</a>
+          <a href="https://twitter.com/sizzdecom" aria-label="Twitter" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a>
+        </nav>
       </div>
 
-    </div>
-  </div>
-</div><!-- End // .slider -->
-
-<div class="slide_buttons">
-</div>
-
-<div class="directional_nav">
-  <div class="previous_btn" title="Previous">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
-      <g>
-        <g>
-          <path fill="#474544" d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
-			c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z"/>
-          <path fill="#474544" d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z"/>
-        </g>
-      </g>
-    </svg>
-  </div>
-  <div class="next_btn" title="Next">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
-      <g>
-        <g>
-          <path fill="#474544" d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z"/>
-          <path fill="#474544" d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z"/>
-        </g>
-      </g>
-    </svg>
-  </div>
-</div>
-     <!-- <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" id="main" class="main" src="img/main.png" alt="">
-     <img class="mainres" src="img/mainres.png" alt="">
-    <div class="landing">
-        <h1>HER ŞEY AYNI GÜN TESLİM</span> </h1>
-        <p>İster dakikalar içinde teslim seçeneğini ister gün sonuna kadar teslim seçeneğini seçin!  </p>
-    </div>     -->
-    <!-- <div class="space"></div> -->
-    
-    <!-- ------teklifAlın -->
-<div class="tklf">
-<a data-aos="fade-up" class="altbtn" href="https://form.jotform.com/211254728900048">Teklif Alın</a></div>
-<!-- -----------Modal -->
-<!-- <div id="myModal" class="modal" >
-   Modal content
-  <div class="modal-content" >
-    <span class="close">&times;</span>
-    <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" src="img/form.png" alt="">
-    <h1>İletişim Kuralım</h1>
-    <form onsubmit = "return false" >
-<div class="column" >
-  <div class="row">
-      <input type = "text" placeholder = "Ad Soyad*" id = "nameField" required>
-      <input type = "email" placeholder = "E-mail*" id = "emailField" required>
-      <input class="phoneInput" type="phone" placeholder = "Telefon*" required >
-  </div>
-      <textarea name="Message" cols="30" rows="5" placeholder="Your Message" id= "messageField"></textarea>
-</div>
-      <button type="submit" class="butn" onclick="writeData()"> Send</button>
-  </form>
-<a href="tel:0850-000-0000"><i class="fa fa-phone"></i>&nbsp;  0850-000-0000</a>
-  </div>
-
-</div> -->
-<br><br><br><br><br><br><br>
-<!-- ------teklifAlın -->
-    <div class="firstCards">
-    <div class="row">
-        <div class="card" data-aos="fade-right">
-            <div class="column">
-                    <h1>Şehir İçi Ve Şehirler Arası Aynı Gün  Hizmeti</h1>
-                    <p>Gerek aynı il içinde  gerekse havaalanı bulunan iller arasında gönderiler adresten alınarak aynı gün içerisinde alıcılarına teslim edilir.</p>
-            </div>
-        </div>
-        <!-- ----------2 -->
-        <div class="card" data-aos="fade-up">
-          <div class="column" >
-            <h1>Paket Servis Hizmeti</h1>
-            <p>Market ve restaurant siparişleri dedike araç ve/veya paket başı ücret seçenekleriyle dakikalar içinde teslim edilir</p>
-        </div>
-        </div>
-        <!-- ----------3 -->
-        <div class="card" data-aos="fade-left" >
-          <div class="column" >
-            <h1>Saatli Teslimat Hizmeti</h1>
-            <p>Hizmet talebi oluşturulduğu andan itibaren gönderiler azami 30-180 dakika aralığında adresden alınarak aynı ildeki alıcıya teslim edilir.</p>
-        </div>
-        </div>
-    </div>
-</div>
-
-
- 
-<div class="secondCards" data-aos="fade-up" >
-    <div class="row">
-        <div class="card" data-aos="fade-right"><div class="column">
-            <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="scimg" src="img/time.png" alt="">
-            <h2>7/24 Kesintisiz Hizmet</h2>
-            <p> Hizmet almak istediğiniz saat aralığını belirleyin biz gerçekleştirelim </p>
-        </div></div>
-
-        <div class="card" data-aos="fade-right"><div class="column">
-            <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="scimg" src="img/tech.png" alt="">
-            <h2>Teknoloji Kullanımı</h2>
-            <p>Mobil uygulama ile tüm iş süreçleri avucunuzun içinde</p>
-        </div></div>
-
-        <div class="card" data-aos="fade-left"><div class="column">
-            <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="scimg" src="img/freeze.png" alt="">
-            <h2>Frigolu Araçlar</h2>
-            <p>Soğutuculu araçlarımızla market siparişleriniz hızlı ve taptaze</p>
-        </div></div>
-
-        <div class="card" data-aos="fade-left"><div class="column">
-            <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="scimg" src="img/contactless.png" alt="">
-            <h2>Temassız Teslimat </h2>
-            <p>Müşterilerimizin sağlığı birincil önceliğimizdir</p>
-        </div></div>
-
-        <!-- <div class="card" data-aos="fade-left"><div class="column">
-          <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="scimg" src="img/placeholder.png" alt="">
-          <h2>Esnek Hizmet Modeleri </h2>
-          <p>İster sadece firmanıza hizmet verecek dedike kiralık araç seçeneğini isterseniz paket başı fiyat seçeneğiyle değişken maliyet seçeneğini seçin </p>
-      </div></div> -->
-    </div>
-    
-</div>
-<div class="que">
-<div class="row">
-  <h1>Gönderi Sorgula :</h1>
-  <form action="">
-  <input type="text" name="post" id="gonderino" placeholder="Gönderi No">
-  <button type="submit">Sorgula</button>
-</form>
-</div>
-</div>
-
-<!-- ---------Footer------- -->
-<footer >
-    <div class="row">
+      <nav class="footer-nav" aria-label="Site haritası">
+        <p class="footer-nav-heading">Sirket</p>
         <ul>
-            <h2 id="footer" class="footerHeader">Şirket</h2>
-            <li><a href="business.html#1"> Hakkımızda</li></a>
-            <li><a href="https://form.jotform.com/211254728900048"> İlanlar</li></a>
-            <li><a href="#soon"> Şartlar ve Koşullar</li></a>
-            <li><a href="#soon"> Gizlilik Politikası</li></a>
-            <li><a href="#soon"> Sürdürülebilirlik</li></a>
-            <li><a href="tel:0850-000-0000"> Bize Ulaşın</li></a>
+          <li><a href="about.html#hakkimizda">Hakkımızda</a></li>
+          <li><a href="https://form.jotform.com/211254728900048" target="_blank" rel="noopener">Kariyer</a></li>
+          <li><a href="#">Sartlar ve Kosullar</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Sürdürülebilirlik</a></li>
+          <li><a href="tel:08500000000">Bize Ulasın</a></li>
         </ul>
-        <!-- ---------- -->
-        </div>
-        <div class="map">
-        <iframe class="mapIf" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406.0376536172211!2d29.143925891320443!3d41.00028642826869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzAwLjkiTiAyOcKwMDgnMzkuMSJF!5e0!3m2!1str!2str!4v1620552945743!5m2!1str!2str" width="100%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>    </div>
-        </div>
-        <div class="ftSocial">
-            <ul>
-                <li><a href="https://www.instagram.com/sizzdecom/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/sizzde"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="mailto:info@sizzde.com"><i class="fa fa-envelope"></i></a></li>
-                <li><a href="https://twitter.com/sizzdecom"><i class="fa fa-twitter"></i></a></li>
-            </ul>
-        </div>
-        <img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="ftLogo" src="img/logo.png" alt="">
-        <address class="copyright">© 2021 Sizzde Tüm hakları saklıdır</address>
-        <div class="ftBlack"><img oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="ds" src="img/DSLOGO.png" alt=""></div>
-</footer>
+      </nav>
 
-    <script>
-       $('.slider').each(function() {
-  var $this = $(this);
-  var $group = $this.find('.slide_group');
-  var $slides = $this.find('.slide');
-  var bulletArray = [];
-  var currentIndex = 0;
-  var timeout;
-  
-  function move(newIndex) {
-    var animateLeft, slideLeft;
-    
-    advance();
-    
-    if ($group.is(':animated') || currentIndex === newIndex) {
-      return;
-    }
-    
-    bulletArray[currentIndex].removeClass('active');
-    bulletArray[newIndex].addClass('active');
-    
-    if (newIndex > currentIndex) {
-      slideLeft = '100%';
-      animateLeft = '-100%';
-    } else {
-      slideLeft = '-100%';
-      animateLeft = '100%';
-    }
-    
-    $slides.eq(newIndex).css({
-      display: 'block',
-      left: slideLeft
-    });
-    $group.animate({
-      left: animateLeft
-    }, function() {
-      $slides.eq(currentIndex).css({
-        display: 'none'
-      });
-      $slides.eq(newIndex).css({
-        left: 0
-      });
-      $group.css({
-        left: 0
-      });
-      currentIndex = newIndex;
-    });
-  }
-  
-  function advance() {
-    clearTimeout(timeout);
-    timeout = setTimeout(function() {
-      if (currentIndex < ($slides.length - 1)) {
-        move(currentIndex + 1);
-      } else {
-        move(0);
-      }
-    }, 6000);
-  }
-  
-  $('.next_btn').on('click', function() {
-    if (currentIndex < ($slides.length - 1)) {
-      move(currentIndex + 1);
-    } else {
-      move(0);
-    }
-  });
-  
-  $('.previous_btn').on('click', function() {
-    if (currentIndex !== 0) {
-      move(currentIndex - 1);
-    } else {
-      move(3);
-    }
-  });
-  
-  $.each($slides, function(index) {
-    var $button = $('<a class="slide_btn">&bull;</a>');
-    
-    if (index === currentIndex) {
-      $button.addClass('active');
-    }
-    $button.on('click', function() {
-      move(index);
-    }).appendTo('.slide_buttons');
-    bulletArray.push($button);
-  });
-  
-  advance();
-});
-    </script>
-    <script>
-              function toggleMenu(){
-          var menuToggle = document.querySelector('.menuToggle');
-          var nav = document.querySelector('.nav');
-          menuToggle.classList.toggle('activeDIS');
-          nav.classList.toggle('activeDIS');
-      }
-      var content = document.getElementsByTagName('body')[0];
-        var darkMode = document.getElementById('dark-change');
-        darkMode.addEventListener('click', function(){
-            darkMode.classList.toggle('active');
-            content.classList.toggle('night');
-        })
-        window.onload = function() {
-        document.getElementById('loading').style.display = 'none';
-        };
+      <div class="footer-map-col">
+        <p class="footer-nav-heading">Konum</p>
+        <iframe
+          class="footer-map-frame"
+          title="Sizzde konum haritası"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406.0376536172211!2d29.143925891320443!3d41.00028642826869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzAwLjkiTiAyOcKwMDgnMzkuMSJF!5e0!3m2!1str!2str!4v1620552945743!5m2!1str!2str"
+          width="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
 
-        AOS.init();
+    </div>
 
-        var modal = document.getElementById("myModal");
+    <div class="footer-bottom">
+      <address class="footer-copy">2026 &copy; Sizzde Lojistik Ltd. Tüm hakları saklıdır.</address>
+      <a href="https://fistkolektif.com/" target="_blank" rel="noopener" class="footer-dev" aria-label="Fist Kolektif">
+        <span>dev</span>
+        <svg width="14" viewBox="0 0 29 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="26" height="48" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M28.3824 0H0V50H28.3824V0ZM18.7118 32.4507V42.5632C18.7118 43.5494 19.2392 44.0425 20.2941 44.0425C21.332 44.0425 21.8509 43.5494 21.8509 42.5632V29.492C21.8509 28.4469 20.728 27.2252 18.4821 25.8268C16.2192 24.4431 15.0877 22.7503 15.0877 20.7484V7.47852C15.0877 4.44624 16.8147 2.9301 20.2686 2.9301C23.7395 2.9301 25.475 4.44624 25.475 7.47852V17.6352H21.8509V7.47852C21.8509 6.50701 21.332 6.02126 20.2941 6.02126H20.2686C19.2307 6.02126 18.7118 6.50701 18.7118 7.47852V20.6822C18.7118 21.6537 19.8347 22.8386 22.0806 24.237C24.3435 25.6207 25.475 27.284 25.475 29.2271V42.5632C25.475 45.6102 23.748 47.1337 20.2941 47.1337C16.8232 47.119 15.0877 45.5955 15.0877 42.5632V32.4507H18.7118ZM3.12927 3.26661H8.7228C11.9558 3.26661 13.5722 4.79088 13.5722 7.83942V42.2465C13.5722 45.2803 11.8788 46.8045 8.49188 46.8193H3.12927V3.26661ZM6.77276 6.35215V43.7116H8.36359C9.40703 43.7116 9.92875 43.2232 9.92875 42.2465V7.83942C9.92875 6.84791 9.40703 6.35215 8.36359 6.35215H6.77276Z" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
 
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-      </script>
-
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
-    
+    lucide.createIcons();
+
+    // Menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav    = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('active');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Slider
+    $('.slider').each(function() {
+      var $group = $(this).find('.slide_group');
+      var $slides = $(this).find('.slide');
+      var bullets = [], idx = 0, timeout;
+
+      function move(n) {
+        advance();
+        if ($group.is(':animated') || idx === n) return;
+        bullets[idx].removeClass('active');
+        bullets[n].addClass('active');
+        var sl = n > idx ? '100%' : '-100%';
+        var al = n > idx ? '-100%' : '100%';
+        $slides.eq(n).css({ display:'block', left: sl });
+        $group.animate({ left: al }, function() {
+          $slides.eq(idx).css({ display:'none' });
+          $slides.eq(n).css({ left: 0 });
+          $group.css({ left: 0 });
+          idx = n;
+        });
+      }
+
+      function advance() {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+          move(idx < $slides.length - 1 ? idx + 1 : 0);
+        }, 6000);
+      }
+
+      $('.next_btn').on('click', function() { move(idx < $slides.length - 1 ? idx + 1 : 0); });
+      $('.previous_btn').on('click', function() { move(idx !== 0 ? idx - 1 : $slides.length - 1); });
+
+      $.each($slides, function(i) {
+        var $b = $('<a class="slide_btn" role="tab">&bull;</a>');
+        if (i === 0) $b.addClass('active');
+        $b.on('click', function() { move(i); }).appendTo('.slide_buttons');
+        bullets.push($b);
+      });
+
+      advance();
+    });
   </script>
-    
 </body>
 </html>

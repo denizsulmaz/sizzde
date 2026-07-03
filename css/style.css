@@ -376,7 +376,7 @@ footer {
   margin:0 auto;
   align-items:start;
 }
-.footer-brand { display:flex; flex-direction:column; gap:16px; }
+.footer-brand { display:flex; flex-direction:column; gap:16px; align-items:flex-start; }
 .ft-logo { width:96px; opacity:0.9; display:block; }
 .footer-tagline { font-size:14px; line-height:1.75; color:rgba(255,255,255,0.4); }
 .footer-social { display:flex; flex-wrap:wrap; gap:14px; margin-top:6px; align-items:center; }

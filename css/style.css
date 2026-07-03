@@ -222,7 +222,7 @@ a.slide_btn { color:rgba(0,0,0,0.2); font-size:36px; margin:0 3px; transition:co
   text-align:center; letter-spacing:-0.3px;
   margin-bottom:32px;
 }
-.section-heading.light { color:#fff; text-align:left; }
+.section-heading.light { color:#fff; }
 
 /* ── Stats band ──────────────────────────────────────── */
 .stats-band { max-width:900px; margin:0 auto 60px; padding:0 var(--gutter); }

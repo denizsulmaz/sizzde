@@ -57,33 +57,61 @@ address { font-style:normal; }
   top:0; left:0; right:0;
   height: 64px;
   background: #000;
+  z-index: 400;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 200;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max);
+  height: 100%;
+  padding: 0 var(--gutter);
+  margin: 0 auto;
 }
 .logoa { display:flex; align-items:center; }
 .logo  { width:105px; height:auto; }
+
+/* ── Desktop Navigation ───────────────────────────────── */
+.desktop-nav {
+  display: block;
+}
+.desktop-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.desktop-nav-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.22s var(--ease);
+}
+.desktop-nav-link:hover,
+.desktop-nav-link[aria-current="page"] {
+  color: var(--orange);
+}
 
 /* spacer below fixed header */
 .header-spacer { height:64px; }
 
 /* ── Hamburger ───────────────────────────────────────── */
 .menuToggle {
-  position: fixed;
-  top: 10px; right: 14px;
-  z-index: 400;
-  width: 44px; height: 44px;
+  display: none;
   background: transparent;
   border: none;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
   border-radius: 10px;
   padding: 0;
+  width: 44px; height: 44px;
   transition: background 0.25s var(--ease);
+  cursor: pointer;
 }
 .menuToggle:hover { background:rgba(255,255,255,0.1); }
 .bar {
@@ -118,6 +146,21 @@ address { font-style:normal; }
   pointer-events: none;
 }
 .nav.active { transform:translateY(0); pointer-events:all; }
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menuToggle {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav {
+    display: none !important;
+  }
+}
 
 .nav ul {
   display:flex; flex-direction:column;

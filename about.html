@@ -22,15 +22,34 @@
 </head>
 <body>
 
-  <!-- ── Hamburger (identical to index.html) ─────────── -->
-  <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+  <!-- ── Header (identical to index.html) ───────────── -->
+  <header class="navbar" role="banner">
+    <div class="navbar-container">
+      <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
+        <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105">
+      </a>
+
+      <!-- Desktop Navigation links -->
+      <nav class="desktop-nav" aria-label="Masaüstü menüsü">
+        <ul>
+          <li><a href="index.html" class="desktop-nav-link">Ana Sayfa</a></li>
+          <li><a href="about.html" class="desktop-nav-link" aria-current="page">Hakkımızda</a></li>
+          <li><a href="index.html#hizmetler" class="desktop-nav-link">Hizmetler</a></li>
+          <li><a href="#footer" class="desktop-nav-link">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Toggle (Mobile Only) -->
+      <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
 
   <!-- ── Nav overlay (identical to index.html) ──────── -->
-  <nav class="nav" id="mainNav" role="navigation" aria-label="Ana menü">
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Mobil ana menü">
     <ul>
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="about.html" aria-current="page">Hakkımızda</a></li>
@@ -45,13 +64,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- ── Header (identical to index.html) ───────────── -->
-  <header class="navbar" role="banner">
-    <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
-      <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105">
-    </a>
-  </header>
   <div class="header-spacer" aria-hidden="true"></div>
 
   <!-- ── About Page Layout ──────────────────────────── -->

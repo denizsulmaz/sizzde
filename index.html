@@ -27,15 +27,34 @@
 </head>
 <body>
 
-  <!-- Hamburger -->
-  <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+  <!-- Header -->
+  <header class="navbar" role="banner">
+    <div class="navbar-container">
+      <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
+        <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105" height="auto">
+      </a>
 
-  <!-- Nav Dropdown -->
-  <nav class="nav" id="mainNav" role="navigation" aria-label="Ana menü">
+      <!-- Desktop Navigation links -->
+      <nav class="desktop-nav" aria-label="Masaüstü menüsü">
+        <ul>
+          <li><a href="index.html" class="desktop-nav-link" aria-current="page">Ana Sayfa</a></li>
+          <li><a href="about.html" class="desktop-nav-link">Hakkımızda</a></li>
+          <li><a href="#hizmetler" class="desktop-nav-link">Hizmetler</a></li>
+          <li><a href="#footer" class="desktop-nav-link">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Toggle (Mobile Only) -->
+      <button class="menuToggle" id="menuToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Dropdown -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Mobil ana menü">
     <ul>
       <li><a href="index.html" aria-current="page">Ana Sayfa</a></li>
       <li><a href="about.html">Hakkımızda</a></li>
@@ -50,13 +69,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- Header -->
-  <header class="navbar" role="banner">
-    <a href="index.html" class="logoa" aria-label="Sizzde Ana Sayfa">
-      <img src="img/logo.png" alt="Sizzde Lojistik" class="logo" width="105" height="auto">
-    </a>
-  </header>
 
   <!-- ── Hero Slider ─────────────────────────────── -->
   <div style="height:64px" aria-hidden="true"></div>
